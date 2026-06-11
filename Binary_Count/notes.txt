@@ -1,0 +1,2 @@
+1. Make a method to format into units easily
+2. Make the methods able to make any base number that you want >:3

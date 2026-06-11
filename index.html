@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cybercat.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Official HexaPaws website - Python tools, projects, and more!">
+<meta name="theme-color" content="#00f7ff">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:title" content="HexaPaws Website">
+<meta property="og:description" content="Python tools and projects">
+<meta property="og:type" content="website">
+<title>HexaPaws Website</title>
+</head>
+<body>
+<div id="boot-screen">
+	<pre id="boot-text"></pre>
+</div>
+<div id="main-content" style="display: none;">
+	<div class="container card">
+		<h1>HexaPaws Website</h1>
+		<p>Welcome to the Official HexaPaws Website! I'm HexaPaws, and I am a Python and Web Developer! I hope you enjoy! :3</p>
+		<p><a href="aboutme.html">About Me</a></p>
+		<p><a href="projects.html">Projects Page</a></p>
+		<p>
+		<a href="https://www.youtube.com/channel/UCJc24k2U_Klpfv5ipTqBx8g">HexaPaws on YouTube</a></p>
+	</div>
+</div>
+<hr>
+<h2>Contact</h2>
+<p><b>Email: lnxp3821@gmail.com</b></p>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hasBooted = localStorage.getItem("booted");
+  const bootScreen = document.getElementById("boot-screen")
+  const mainContent = document.getElementById("main-content")
+  const bootText = document.getElementById("boot-text")
+  if (hasBooted) {
+    bootScreen.style.display = "none";
+    mainContent.style.display = "block";
+  } else {
+      const lines = ["Initialising System...", "Detected User!", "Connecting to Network...", "Access Granted!", "Launching HexaInterface..."];
+  let i = 0;
+  let j = 0;
+  const speed = 15;
+
+  function typeLine() {
+    if (i < lines.length) {
+      if (j < lines[i].length) {
+        bootText.textContent += lines[i].charAt(j);
+        j++;
+        setTimeout(typeLine, speed);
+      } else {
+        bootText.innerHTML += "\n";
+        i++;
+        j = 0;
+        setTimeout(typeLine, 1000);
+      }
+    } else {
+      setTimeout(() => {
+        bootScreen.style.display = "none";
+        mainContent.style.display = "block";
+
+        localStorage.setItem("booted", "true");
+      }, 800);
+    }
+   }
+   typeLine();
+  }
+
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
